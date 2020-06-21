@@ -17,7 +17,7 @@ Simply click the bookmarklet on any webpage, and a stopwatch formatted in `MM:SS
 * More efficient on system resources than Chrome extensions
 * Convenient: run with one-click
 
-### Compatability
+## Compatability
 Browser | Supported
 --------|------------
 Chrome |     ✓
