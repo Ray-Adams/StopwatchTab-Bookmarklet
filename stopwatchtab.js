@@ -1,16 +1,7 @@
-javascript:(() => {
-    var interval, seconds = 0, initialDocumentTitle = document.title;
+javascript:((interval, seconds, initialDocumentTitle) => {
+    seconds = 0, initialDocumentTitle = document.title;
 
-    formatSeconds = secondsTotal => {   
-        let hrs = ~~(secondsTotal / 3600), mins = ~~((secondsTotal % 3600) / 60), secs = ~~secondsTotal % 60, ret = '';
-
-        if (hrs > 0) {
-            ret += '' + hrs + ':' + (mins < 10 ? '0' : '');
-        }
-        ret += '' + mins + ':' + (secs < 10 ? '0' : '');
-        ret += '' + secs;
-        return ret;
-    }
+    formatSeconds = secondsTotal => new Date(secondsTotal * 1000).toISOString().substr(11, 8);
 
     stopwatch = () => {
         if (seconds < 86400) {
