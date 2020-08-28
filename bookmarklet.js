@@ -1,1 +1,1 @@
-javascript:(function(){var i,s=0,d=document.title;function c(e){return(e-(e%=60))/60+(9<e?":":":0")+e}function t(){s<3600?(s++,document.getElementsByTagName("title")[0].innerHTML='('+c(s)+') '+d):clearInterval(i)}i=setInterval(t,1e3);})();
+javascript:(z=>{var d,e=0,f=document,c=f.title,t='',u=3600;x=a=>{let b=~~(a/u),c=~~(a%u/60),d=~~a%60,e=t;return 0<b&&(e+=t+b+":"+(10>c?"0":t)),e+=t+c+":"+(10>d?"0":t),e+=t+d,e},y=z=>{e<u*24?(e++,f.querySelector("title").innerHTML=`(${x(e)}) ${c}`):clearInterval(d)},d=setInterval(y,1e3)})()
