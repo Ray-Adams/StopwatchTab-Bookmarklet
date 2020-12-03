@@ -18,7 +18,7 @@ Simply click the bookmarklet on any webpage, and a stopwatch formatted in `HH:MM
 * Convenient: run with one-click
 
 ## Release History
-* 1.5.0
+* 1.1.0
   * Cleaner code
   * Stopwatch limit increased from 1 hour to 24 hours
 * 1.0.0
