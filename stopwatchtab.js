@@ -1,14 +1,38 @@
 javascript:(() => {
-    let interval, seconds = 0, initialDocumentTitle = document.title;
+    
+    if (typeof stopwatchTab != 'undefined') {
 
-    formatSeconds = secondsTotal => new Date(secondsTotal * 1000).toJSON().substr(11, 8);
+        if (stopwatchTab.active) {
+            
+            clearInterval(stopwatchTab.interval);
+            stopwatchTab.active = false;
+            
+        } else {
+            
+            stopwatchTab.start();
+            stopwatchTab.active = true;
+            
+        }
 
-    stopwatch = () => {
-        if (seconds < 86400) {
+    } else {
+
+        this.stopwatchTab = {
+            active: true
+        };
+
+        let seconds = 0, initialDocumentTitle = document.title;
+
+        formatSeconds = totalSeconds => new Date(totalSeconds * 1000).toJSON().substr(11, 8);
+
+        stopwatch = () => {
             seconds++;
             document.title = `(${formatSeconds(seconds)}) ${initialDocumentTitle}`;
-        } else clearInterval(interval)
+        };
+        
+        (stopwatchTab.start = () => {
+            stopwatchTab.interval = setInterval(stopwatch, 1000);
+        })();
+
     }
-    
-    interval = setInterval(stopwatch, 1000)
+
 })();
