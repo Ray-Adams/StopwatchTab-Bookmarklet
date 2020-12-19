@@ -1,1 +1,1 @@
-javascript:((a,b,c=0,d=document,e=d.title)=>{a=_=>86400>c?(c++,d.title=`(${new Date(1e3*c).toJSON().substr(11,8)}) ${e}`):clearInterval(b),b=setInterval(a,1e3)})()
+javascript:(_=>{if([]._+''!=typeof stopwatchTab)stopwatchTab.a?(clearInterval(stopwatchTab.i),stopwatchTab.a=!1):(stopwatchTab.s(),stopwatchTab.a=!0);else{this.stopwatchTab={a:!0};let d=0,a=document,b=a.title;(stopwatchTab.s=()=>stopwatchTab.i=setInterval(_=>{d++,a.title=`(${new Date(1e3*d).toJSON().substr(11,8)}) ${b}`},1e3))()}})()
