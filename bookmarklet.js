@@ -1,1 +1,1 @@
-javascript:((a,b,c)=>{this.stopwatchTab?(stopwatchTab.a=stopwatchTab.a?clearInterval(stopwatchTab.i):(stopwatchTab.s(),1)):(c=a.title,this.stopwatchTab={a,s(){this.i=setInterval(_=>a.title=`(${new Date(1e3*(++b)).toJSON().substr(11,8)}) `+c,1e3)}}).s()})(document,0)
+javascript:((a,b,e,d=a.title)=>{e.a=!e.a,e.j||=setInterval(_=>e.a&&=a.title=`(${new Date(b+=1e3).toJSON().substr(11,8)}) `+d,1e3)})(document,0,this.swTab||={})
