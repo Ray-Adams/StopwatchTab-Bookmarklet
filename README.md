@@ -4,7 +4,7 @@ A minimalistic bookmarklet that adds stopwatches to tab titles.
 ## Installation
 Copy and paste the code below into the URL section of a new bookmark.
 ```javascript
-javascript:((a,b,c)=>{this.stopwatchTab?(stopwatchTab.a=stopwatchTab.a?clearInterval(stopwatchTab.i):(stopwatchTab.s(),1)):(c=a.title,this.stopwatchTab={a,s(){this.i=setInterval(_=>a.title=`(${new Date(1e3*(++b)).toJSON().substr(11,8)}) `+c,1e3)}}).s()})(document,0)
+javascript:((a,b,e,d=a.title)=>{e.a=!e.a,e.j||=setInterval(_=>e.a&&=a.title=`(${new Date(b+=1e3).toJSON().substr(11,8)}) `+d,1e3)})(document,0,this.swTab||={})
 ```
 **NOTE**: You can view the beautified file [here](../master/stopwatchtab.js).
 
@@ -19,7 +19,7 @@ Simply click the bookmarklet on any webpage, and a stopwatch formatted in `HH:MM
 
 ## Release History
 * 1.2.1
-  * Shaved off 66 bytes from the bookmarklet
+  * Fully code-golfed (saved 177 bytes)
   * Courtesy of [Illya](https://github.com/Illya9999) and ABC (<@!706348280853954611>)
 * 1.2.0
   * Added start/stop functionality
