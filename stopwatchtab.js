@@ -1,6 +1,6 @@
-javascript:(() => {
+(() => {
     
-    if (typeof stopwatchTab != 'undefined') {
+    if (window.stopwatchTab) {
 
         if (stopwatchTab.active) {
             
@@ -12,7 +12,7 @@ javascript:(() => {
             stopwatchTab.start();
             stopwatchTab.active = true;
             
-        }
+        };
 
     } else {
 
@@ -20,19 +20,19 @@ javascript:(() => {
             active: true
         };
 
-        let seconds = 0, initialDocumentTitle = document.title;
+        let seconds = 0, initialTabTitle = document.title;
 
-        formatSeconds = totalSeconds => new Date(totalSeconds * 1000).toJSON().substr(11, 8);
+        const formatSeconds = totalSeconds => new Date(totalSeconds * 1000).toJSON().substr(11, 8);
 
-        stopwatch = () => {
+        const stopwatch = () => {
             seconds++;
-            document.title = `(${formatSeconds(seconds)}) ${initialDocumentTitle}`;
+            document.title = `(${formatSeconds(seconds)}) ${initialTabTitle}`;
         };
         
         (stopwatchTab.start = () => {
             stopwatchTab.interval = setInterval(stopwatch, 1000);
         })();
 
-    }
+    };
 
-})();
+})()
